@@ -12,10 +12,8 @@ html {
 header {
     background-color: black;
     color: white;
-    height: 40px;
     padding: 10px;
-    /* border-radius: 10px; */
-    overflow: auto; /* Решает проблему с размещением по горизонтали */
+    overflow: auto;
     text-align: center;
     margin: 0;
 }
@@ -47,47 +45,54 @@ button {
     background-color: transparent;
     color: black;
     border: none;
+    border-radius: 25px 25px 25px 25px;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    text-decoration: underline;
-}
+/* button:hover {
+    color: black;
+} */
 
 #name {
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    border-radius: 25px 25px 25px 25px;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 21px;
     padding: 10px;
-  }
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 10px;
-  }
+}
   
-  input[type="text"] {
+input[type="text"] {
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    border-radius: 25px 25px 25px 25px;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 21px;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  button[type="submit"] {
+    text-align: left;
+    min-width: 300px;
+}
+button[type="submit"] {
     background-color: black;
     padding: 10px;
+    min-width: 300px;
     border: none;
-    border-start-end-radius: 10px;
-    border-end-start-radius: 10px;
-    border-start-start-radius: 10px;
-    border-end-end-radius: 10px;
+    border-radius: 25px 25px 25px 25px;
     color: white;
     font-size: 21px;
     font-family: "Helvetica Neue", sans-serif;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
-  }
+}
+
+button[type="submit"]:hover{
+    color: black;
+    background-color: white;
+}
 section {
     background-color: white;
     padding: 20px;
