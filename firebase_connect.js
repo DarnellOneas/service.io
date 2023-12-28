@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const db = getFirestore();
+const db = getFirestore(app);
 
 // Функция для отправки данных в коллекцию site_requests
 async function sendRequestData(name, phone, date) {

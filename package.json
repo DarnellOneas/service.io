@@ -1,0 +1,15 @@
+{
+  "name": "service.io",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "firebase_connect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.7.1"
+  }
+}
