@@ -18,6 +18,8 @@ const firebaseConfig = {
   measurementId: "G-R1D76YR5KN"
 };
 
+console.log("Firebase скрипт успешно подключен");
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -42,22 +44,3 @@ async function sendRequestData(name, phone, date) {
     console.error("Ошибка при отправке данных:", error);
   }
 }
-
-// Обработчик события для кнопки отправки формы
-document.getElementById("form").addEventListener("submit", function(event) {
-  console.log("Отправляет")
-  event.preventDefault(); // Отменяем отправку формы по умолчанию
-
-  const nameInput = document.getElementById("name");
-  const phoneInput = document.getElementById("phone");
-
-  const name = nameInput.value;
-  const phone = phoneInput.value;
-  const date = new Date().toISOString();
-
-  sendRequestData(name, phone, date);
-
-  // Очищаем поля ввода после отправки
-  nameInput.value = "";
-  phoneInput.value = "";
-});
