@@ -45,6 +45,7 @@ async function sendRequestData(name, phone, date) {
 
 // Обработчик события для кнопки отправки формы
 document.getElementById("form").addEventListener("submit", function(event) {
+  console.log("Отправляет")
   event.preventDefault(); // Отменяем отправку формы по умолчанию
 
   const nameInput = document.getElementById("name");
