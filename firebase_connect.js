@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-// import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,6 +25,44 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore();
 
+// // Функция для отправки данных в коллекцию site_requests
+// async function sendRequestData(name, phone, date) {
+
+//   const requestRef = collection(db, "site_requests");
+
+//   try {
+//     // Добавляем новый документ с данными
+//     const docRef = await addDoc(requestRef, {
+//       name: name,
+//       phone: phone,
+//       date: date,
+//     });
+
+//     console.log("Данные успешно отправлены в Cloud Firestore!");
+//     console.log("ID документа:", docRef.id);
+//   } catch (error) {
+//     console.error("Ошибка при отправке данных:", error);
+//   }
+// }
+
+// document.getElementById("form").addEventListener("submit", function(event) {
+//   console.log("Отправляет")
+//   event.preventDefault(); // Отменяем отправку формы по умолчанию
+
+//   const nameInput = document.getElementById("name");
+//   const phoneInput = document.getElementById("phone");
+
+//   const name = nameInput.value;
+//   const phone = phoneInput.value;
+//   const date = new Date().toISOString();
+
+//   sendRequestData(name, phone, date);
+
+//   // Очищаем поля ввода после отправки
+//   nameInput.value = "";
+//   phoneInput.value = "";
+// });
+
 // Функция для отправки данных в коллекцию site_requests
 async function sendRequestData(name, phone, date) {
 
@@ -44,3 +82,44 @@ async function sendRequestData(name, phone, date) {
     console.error("Ошибка при отправке данных:", error);
   }
 }
+
+// Проверяем, не являются ли значения пустыми
+function validateInputs() {
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone");
+
+  if (nameInput.value === "") {
+    console.log("Имя не может быть пустым!");
+    return false;
+  }
+
+  if (phoneInput.value === "") {
+    console.log("Телефон не может быть пустым!");
+    return false;
+  }
+
+  return true;
+}
+
+// Добавляем проверку ошибок
+document.getElementById("form").addEventListener("submit", function(event) {
+  console.log("Отправляет")
+  event.preventDefault(); // Отменяем отправку формы по умолчанию
+
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone");
+
+  const name = nameInput.value;
+  const phone = phoneInput.value;
+  const date = new Date().toISOString();
+
+  if (!validateInputs()) {
+    return;
+  }
+
+  sendRequestData(name, phone, date);
+
+  // Очищаем поля ввода после отправки
+  nameInput.value = "";
+  phoneInput.value = "";
+});

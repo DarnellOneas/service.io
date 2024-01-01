@@ -31,25 +31,3 @@ document.addEventListener('DOMContentLoaded', function() {
       window.requestAnimationFrame(animation);
     }
   });
-
-// Обработчик события для кнопки отправки формы
-// document.getElementById("form").addEventListener("submit", function(event) {
-//   console.log("Отправляет")
-//   event.preventDefault(); // Отменяем отправку формы по умолчанию
-
-//   const nameInput = document.getElementById("name");
-//   const phoneInput = document.getElementById("phone");
-
-//   // const name = nameInput.value;
-//   // const phone = phoneInput.value;
-//   // const date = new Date().toISOString();
-
-//   // sendRequestData(name, phone, date);
-
-//   // // Очищаем поля ввода после отправки
-//   // nameInput.value = "";
-//   // phoneInput.value = "";
-// });
-document.getElementById("form").addEventListener("submit", function(){
-  console.log("Отправляет")
-});
