@@ -23,45 +23,8 @@ console.log("Firebase скрипт успешно подключен");
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const db = getFirestore();
+const db = getFirestore(app);
 
-// // Функция для отправки данных в коллекцию site_requests
-// async function sendRequestData(name, phone, date) {
-
-//   const requestRef = collection(db, "site_requests");
-
-//   try {
-//     // Добавляем новый документ с данными
-//     const docRef = await addDoc(requestRef, {
-//       name: name,
-//       phone: phone,
-//       date: date,
-//     });
-
-//     console.log("Данные успешно отправлены в Cloud Firestore!");
-//     console.log("ID документа:", docRef.id);
-//   } catch (error) {
-//     console.error("Ошибка при отправке данных:", error);
-//   }
-// }
-
-// document.getElementById("form").addEventListener("submit", function(event) {
-//   console.log("Отправляет")
-//   event.preventDefault(); // Отменяем отправку формы по умолчанию
-
-//   const nameInput = document.getElementById("name");
-//   const phoneInput = document.getElementById("phone");
-
-//   const name = nameInput.value;
-//   const phone = phoneInput.value;
-//   const date = new Date().toISOString();
-
-//   sendRequestData(name, phone, date);
-
-//   // Очищаем поля ввода после отправки
-//   nameInput.value = "";
-//   phoneInput.value = "";
-// });
 
 // Функция для отправки данных в коллекцию site_requests
 async function sendRequestData(name, phone, date) {

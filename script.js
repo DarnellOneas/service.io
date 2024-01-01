@@ -31,3 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
       window.requestAnimationFrame(animation);
     }
   });
+
+
+  function showHeader() {
+    document.querySelector("header").classList.toggle("collapsed");
+    console.log("Привет")
+  }
+  
+  document.querySelector("show-header").addEventListener("click", showHeader);
