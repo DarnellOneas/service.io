@@ -68,6 +68,7 @@ const submitForm = async (event) => {
   }
 };
 
-// Привязка обработчика отправки формы
-const form = document.getElementById('form');
-form.addEventListener('submit', submitForm);
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form');
+  form.addEventListener('submit', submitForm);
+});
