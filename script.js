@@ -37,10 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("header").classList.toggle("collapsed");
     console.log("Привет")
   }
-  
   // document.querySelector("show-header").addEventListener("click", showHeader);
-
-
 
 // Обработчик отправки формы
 const submitForm = async (event) => {
