@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // document.querySelector("show-header").addEventListener("click", showHeader);
 
 
-  // Подключение необходимых модулей
-const axios = require('axios');
 
 // Обработчик отправки формы
 const submitForm = async (event) => {
