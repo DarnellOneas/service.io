@@ -80,7 +80,7 @@ input[type="text"] {
 button[type="submit"] {
     background-color: black;
     padding: 10px;
-    min-width: 300px;
+    min-width: 340px;
     border: none;
     border-radius: 25px 25px 25px 25px;
     color: white;

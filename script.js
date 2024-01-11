@@ -39,3 +39,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // document.querySelector("show-header").addEventListener("click", showHeader);
+
+
+  // Подключение необходимых модулей
+const axios = require('axios');
+
+// Обработчик отправки формы
+const submitForm = async (event) => {
+  event.preventDefault();
+
+  // Получение значений полей формы
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+
+  // Ваш токен бота и идентификатор чата
+  const botToken = '6831351434:AAEN12lnDeQdaQ_oR8YySxD4FgxynRhqm3I';
+  const chatId = '-1001893628986';
+
+  // Сообщение для отправки в телеграм-бота
+  const message = `Имя: ${name}\nТелефон: ${phone}`;
+
+  // Отправка сообщения в телеграм-бота
+  try {
+    await axios.get(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+    console.log('Форма успешно отправлена в телеграм-бота!');
+  } catch (error) {
+    console.error('Произошла ошибка при отправке формы в телеграм-бота:', error);
+  }
+};
+
+// Привязка обработчика отправки формы
+const form = document.getElementById('form');
+form.addEventListener('submit', submitForm);
