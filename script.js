@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("header").classList.toggle("collapsed");
     console.log("Привет")
   }
-  // document.querySelector("show-header").addEventListener("click", showHeader);
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector("show-header").addEventListener("click", showHeader);
+  });
 
 // Обработчик отправки формы
 const submitForm = async (event) => {
@@ -57,6 +59,9 @@ const submitForm = async (event) => {
   // Отправка сообщения в телеграм-бота
   try {
     await axios.get(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`);
+    document.getElementById('name').value = ''
+    document.getElementById('phone').value = ''
+    alert('Спасибо за заявку! Ожидайте, в ближайшее время с вами свяжется специалист');
     console.log('Форма успешно отправлена в телеграм-бота!');
   } catch (error) {
     console.error('Произошла ошибка при отправке формы в телеграм-бота:', error);
@@ -66,4 +71,5 @@ const submitForm = async (event) => {
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form');
   form.addEventListener('submit', submitForm);
+
 });
