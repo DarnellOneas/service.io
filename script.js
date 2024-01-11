@@ -38,4 +38,4 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Привет")
   }
   
-  document.querySelector("show-header").addEventListener("click", showHeader);
+  // document.querySelector("show-header").addEventListener("click", showHeader);
